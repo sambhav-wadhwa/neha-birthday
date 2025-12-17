@@ -1,7 +1,7 @@
 {
   "name": "Happy Birthday Neha ❤️",
   "short_name": "Neha ❤️",
-  "start_url": "PLEASE OPEN ME ONLY.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#2e1f27",
   "theme_color": "#2e1f27",
@@ -18,3 +18,4 @@
     }
   ]
 }
+
