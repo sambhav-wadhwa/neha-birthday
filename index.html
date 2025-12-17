@@ -694,24 +694,27 @@ document.addEventListener("visibilitychange", () => {
 });
 </script>
 <script>
-const videoEl = document.getElementById("favVideo");
-const bdayAudio = document.getElementById("bdayAudio");
-const favAudio = document.getElementById("favAudio");
+document.addEventListener("DOMContentLoaded", () => {
+  const videoEl = document.getElementById("favVideo");
+  const bdayAudio = document.getElementById("bdayAudio");
+  const favAudio = document.getElementById("favAudio");
+  const bdayBtn = document.getElementById("bdayBtn");
+  const favBtn = document.getElementById("favBtn");
 
-const bdayBtn = document.getElementById("bdayBtn");
-const favBtn = document.getElementById("favBtn");
-
-if (videoEl) {
-  videoEl.addEventListener("play", () => {
-    // Pause audios
-    bdayAudio.pause();
-    favAudio.pause();
-
-    // Reset button text
-    bdayBtn.textContent = "🎵 Play Birthday Song ▶️";
-    favBtn.textContent = "🎵 Play Your Favourite Song ▶️";
-  });
-}
+  if (videoEl) {
+    videoEl.addEventListener("play", () => {
+      // Pause audios
+      if (bdayAudio && !bdayAudio.paused) {
+        bdayAudio.pause();
+        if (bdayBtn) bdayBtn.textContent = "🎵 Play Birthday Song ▶️";
+      }
+      if (favAudio && !favAudio.paused) {
+        favAudio.pause();
+        if (favBtn) favBtn.textContent = "🎵 Play Your Favourite Song ▶️";
+      }
+    });
+  }
+});
 </script>
 
 </body>
