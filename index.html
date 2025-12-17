@@ -460,7 +460,7 @@ I can just keep going but that's not the point of this site. I just want to say 
 <section class="favorite-video">
   <h2>🎥 Our Favourite Video 🎥</h2>
   <div style="text-align: center; margin-top: 1rem;">
-    <video controls style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+    <video id="favVideo" controls playsinline style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
       <source src="our_favorite_video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -692,6 +692,26 @@ document.addEventListener("visibilitychange", () => {
     document.getElementById("favAudio")?.pause();
   }
 });
+</script>
+<script>
+const videoEl = document.getElementById("favVideo");
+const bdayAudio = document.getElementById("bdayAudio");
+const favAudio = document.getElementById("favAudio");
+
+const bdayBtn = document.getElementById("bdayBtn");
+const favBtn = document.getElementById("favBtn");
+
+if (videoEl) {
+  videoEl.addEventListener("play", () => {
+    // Pause audios
+    bdayAudio.pause();
+    favAudio.pause();
+
+    // Reset button text
+    bdayBtn.textContent = "🎵 Play Birthday Song ▶️";
+    favBtn.textContent = "🎵 Play Your Favourite Song ▶️";
+  });
+}
 </script>
 
 </body>
