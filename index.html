@@ -228,28 +228,57 @@ font-size: 1.5rem;
     button, a {
   touch-action: manipulation;
 }
+	  .audio-bar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.audio-bar button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background-color: #f48fb1;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* iPhone / small screens */
+@media (max-width: 480px) {
+  .audio-bar {
+    flex-direction: column;
+    top: 8px;
+  }
+
+  .audio-bar button {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
+
 
 
 </style>
 </head>
 <body>
   <div class="ghibli-background"></div>
-
-  <div class="audio-control" style="position: absolute; top: 10px; left: 10px; z-index: 999;">
-  <button onclick="toggleAudio('bdayAudio')">
-    🎵 Play Birthday Song ▶️/⏸️
-  </button>
+<div class="audio-bar">
+  <button onclick="toggleAudio('bdayAudio')">🎵 Birthday Song</button>
+  <button onclick="toggleAudio('favAudio')">🎵 Favourite Song</button>
 </div>
+
+  
 <audio id="bdayAudio" loop preload="auto">
   <source src="Happy Birthday - Diljit Dosanjh.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<div class="audio-control" style="position: absolute; top: 10px; right: 10px; z-index: 999;">
-  <button onclick="toggleAudio('favAudio')">
-    🎵 Play Your Favourite Song ▶️/⏸️
-  </button>
-</div>
+
 <audio id="favAudio" loop preload="auto">
   <source src="Ishqbazian.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
