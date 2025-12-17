@@ -278,6 +278,9 @@ font-size: 1.5rem;
     letter-spacing: 0.5px;
   }
 }
+button {
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 
@@ -651,6 +654,14 @@ const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
 if (isIOS && !isStandalone) {
   alert("📱 To install:\nSafari → Share → Add to Home Screen ❤️");
 }
+</script>
+<script>
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    document.getElementById("bdayAudio")?.pause();
+    document.getElementById("favAudio")?.pause();
+  }
+});
 </script>
 
 </body>
