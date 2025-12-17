@@ -467,19 +467,29 @@ I can just keep going but that's not the point of this site. I just want to say 
   font-family: 'Dancing Script', cursive;
   font-size: 1.5rem;
   color: #d94888;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Desktop typing effect */
+.typing-text {
+  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #d94888;
-  margin: 0 auto;
-  text-align: center;
+  animation: handwriting 5s steps(60, end) infinite alternate;
 }
 
-.typing-text {
-  display: inline-block;
-  animation: handwriting 5s steps(60, end) infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
+/* iPhone / small screens fix */
+@media (max-width: 480px) {
+  .typing-text {
+    white-space: normal;     /* allow wrapping */
+    border-right: none;      /* cursor looks bad on wrap */
+    animation: none;         /* disable typing on phone */
+  }
 }
+
     @keyframes handwriting {
   0% { width: 0; }
   90% { width: 100%; }
