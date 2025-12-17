@@ -1,8 +1,8 @@
 {
   "name": "Happy Birthday Neha ❤️",
   "short_name": "Neha ❤️",
-  "start_url": "/neha-birthday/",
-  "scope": "/neha-birthday/"
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#2e1f27",
   "theme_color": "#2e1f27",
@@ -19,6 +19,3 @@
     }
   ]
 }
-
-
-
