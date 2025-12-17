@@ -289,8 +289,14 @@ button {
 <body>
   <div class="ghibli-background"></div>
 <div class="audio-bar">
-  <button onclick="toggleAudio('bdayAudio')">🎵 Play Birthday Song ▶️/⏸️</button>
-  <button onclick="toggleAudio('favAudio')">🎵 Play Your Favourite Song ▶️/⏸️</button>
+ <button id="bdayBtn" type="button" onclick="toggleAudio('bdayAudio')">
+  🎵 Play Birthday Song ▶️
+</button>
+
+<button id="favBtn" type="button" onclick="toggleAudio('favAudio')">
+  🎵 Play Your Favourite Song ▶️
+</button>
+
 </div>
 
   
@@ -574,21 +580,35 @@ I can just keep going but that's not the point of this site. I just want to say 
 
 
 <script>
-  function toggleAudio(id) {
-    const thisAudio = document.getElementById(id);
-    const otherAudio = id === 'bdayAudio' ? document.getElementById('favAudio') : document.getElementById('bdayAudio');
-    const video = document.querySelector("video");
+ function toggleAudio(id) {
+  const thisAudio = document.getElementById(id);
+  const otherAudio = id === 'bdayAudio'
+    ? document.getElementById('favAudio')
+    : document.getElementById('bdayAudio');
 
-    if (!thisAudio || !otherAudio) return;
+  const thisBtn = id === 'bdayAudio'
+    ? document.getElementById('bdayBtn')
+    : document.getElementById('favBtn');
 
-    if (thisAudio.paused) {
-      thisAudio.play();
-      otherAudio.pause();
-      if (video) video.pause(); // Pause video when audio plays
-    } else {
-      thisAudio.pause();
-    }
+  const otherBtn = id === 'bdayAudio'
+    ? document.getElementById('favBtn')
+    : document.getElementById('bdayBtn');
+
+  if (!thisAudio || !otherAudio) return;
+
+  if (thisAudio.paused) {
+    thisAudio.play();
+    otherAudio.pause();
+
+    // update button text
+    thisBtn.textContent = thisBtn.textContent.replace('▶️', '⏸');
+    otherBtn.textContent = otherBtn.textContent.replace('⏸', '▶️');
+  } else {
+    thisAudio.pause();
+    thisBtn.textContent = thisBtn.textContent.replace('⏸', '▶️');
   }
+}
+
 
   function blowOut(candle) {
     const flame = candle.querySelector('.flame');
