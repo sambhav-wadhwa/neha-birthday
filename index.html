@@ -46,10 +46,17 @@
   font-size: 4rem;
   margin-bottom: 1rem;
   color: #ffd6e0;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  animation: glow 2s ease-in-out infinite alternate;
   letter-spacing: 1px;
+  text-align: center;
+
+  /* softer default glow */
+  text-shadow:
+    0 0 6px rgba(255, 182, 193, 0.6),
+    0 0 12px rgba(255, 105, 180, 0.4);
+
+  animation: glow-soft 2.5s ease-in-out infinite alternate;
 }
+
 p1{
 font-size: 1.5rem;
 
@@ -58,14 +65,19 @@ font-size: 1.5rem;
 }
 
 /* Optional glowing effect */
-@keyframes glow {
+@keyframes glow-soft {
   from {
-    text-shadow: 0 0 5px #ffd6e0, 0 0 10px #ff99cc, 0 0 15px #ff66b2;
+    text-shadow:
+      0 0 4px rgba(255, 182, 193, 0.5),
+      0 0 8px rgba(255, 105, 180, 0.3);
   }
   to {
-    text-shadow: 0 0 10px #fff0f5, 0 0 15px #ffb3d9, 0 0 20px #ff66b2;
+    text-shadow:
+      0 0 8px rgba(255, 240, 245, 0.8),
+      0 0 16px rgba(255, 105, 180, 0.6);
   }
 }
+
     .ghibli-background {
       position: fixed;
       top: 0;
