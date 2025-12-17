@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- iOS PWA support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Neha ❤️">
+
+<!-- Disable iOS auto-detection -->
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png">
+<link rel="manifest" href="manifest.json">
+
+  <title>Happy Birthday Neha!❤️</title>
+  <link rel="icon" href="data:,">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+  --vh: 1vh;
+}
+
+.full-height {
+  min-height: calc(var(--vh) * 100);
+}
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #2e1f27, #473144, #594160);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #2d1f2f;
+      position: relative;
+    }
+   h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #ffd6e0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  animation: glow 2s ease-in-out infinite alternate;
+  letter-spacing: 1px;
+}
+p1{
+font-size: 1.5rem;
+
+  animation: glow 2s ease-in-out infinite alternate;
+
+}
+
+/* Optional glowing effect */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ffd6e0, 0 0 10px #ff99cc, 0 0 15px #ff66b2;
+  }
+  to {
+    text-shadow: 0 0 10px #fff0f5, 0 0 15px #ffb3d9, 0 0 20px #ff66b2;
+  }
+}
+    .ghibli-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.pinimg.com/originals/02/6d/91/026d91413cf6cb719e3c1fd6763ba380.gif') center center/cover no-repeat;
+      z-index: -1;
+      opacity: 0.4;
+    }
+    .cake-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cake {
+      width: 150px;
+      margin: auto;
+      position: relative;
+    }
+    .cake-text {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.2rem;
+      color: #fff3e0;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+    .layer {
+      background: #ffb6b9;
+      height: 30px;
+      margin: 5px auto;
+      border-radius: 8px;
+    }
+    .candle {
+      width: 10px;
+      height: 30px;
+      background: #fff;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .flame {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 15px;
+      background: radial-gradient(ellipse at center, #ff0 0%, #f00 70%);
+      border-radius: 50%;
+      animation: flicker 0.3s infinite alternate;
+    }
+    @keyframes flicker {
+      from { transform: translateX(-50%) scale(1); opacity: 1; }
+      to { transform: translateX(-50%) scale(0.8); opacity: 0.8; }
+    }
+    .fade-out {
+      animation: fadeOut 0.5s forwards;
+    }
+    @keyframes fadeOut {
+      to { opacity: 0; transform: scale(0); }
+    }
+    .message, .timeline, .wish-wall, .gallery, .reasons-love {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+    .memory {
+      margin-bottom: 1.5rem;
+    }
+    .wish {
+      background: #fff3e0;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 12px;
+      display: inline-block;
+      max-width: 750px;
+      vertical-align: top;
+      color: #333;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      background: #2d1f2f;
+      font-size: 1.2rem;
+      color: #ffe082;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 12px;
+      margin: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .audio-control {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .audio-control button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: #f48fb1;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .reasons-love ul {
+      list-style-type: '❤️ ';
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .reasons-love li {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+      .clap {
+      font-size: 2rem;
+      animation: clap-bounce 0.6s infinite alternate ease-in-out;
+    }
+    @keyframes clap-bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+  
+    .time-counter {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      max-width: 600px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+
+    .favorite-video {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      max-width: 800px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+    button, a {
+  touch-action: manipulation;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="ghibli-background"></div>
+
+  <div class="audio-control" style="position: absolute; top: 10px; left: 10px; z-index: 999;">
+  <button onclick="toggleAudio('bdayAudio')">
+    🎵 Play Birthday Song ▶️/⏸️
+  </button>
+</div>
+<audio id="bdayAudio" loop preload="auto">
+  <source src="Happy Birthday - Diljit Dosanjh.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="audio-control" style="position: absolute; top: 10px; right: 10px; z-index: 999;">
+  <button onclick="toggleAudio('favAudio')">
+    🎵 Play Your Favourite Song ▶️/⏸️
+  </button>
+</div>
+<audio id="favAudio" loop preload="auto">
+  <source src="Ishqbazian.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<audio playsinline></audio>
+<video playsinline></video>
+
+
+  <header>
+    <h1>🎉 Happy Birthday, Neha Chugh! 🎉</h1>
+<h1>❤️ (The Charger of my Soul) ❤️</h1>
+    <p1>Today is your day — let’s celebrate YOU!</p1>
+  </header>
+
+<section class="time-counter">
+  <h2>⏳ Time Since We Met (17-Dec-2024)</h2>
+  <p id="timeSince" style="font-size: 1.5rem; text-align: center;"></p>
+</section>
+
+
+  <section class="cake-section">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+    <div class="clap">👏🎂🥳</div>
+    <div class="cake">
+      <div class="candle" onclick="blowOut(this)">
+        <div class="flame"></div>
+      </div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="cake-text">Taurus Baby ♉</div>
+        </div>
+    <div class="clap">🥳🎂👏</div>
+  </div>
+</section>
+
+  <section class="message">
+    <h2>💌 A Personal Message 💌</h2>
+    <p>Dear Neha,</p>
+    <p>Words can't express how much you mean to me.Here's to many more birthdays together ❤️
+I promise to celebrate you—not just today, but always.
+</p>
+<p>
+You are the reason I wake up with a smile every day.
+You are the best thing that ever happened to me, and I am so grateful for every moment we share.
+</p>
+<p>
+I want to be the reason you smile every day.
+I want you to be the only woman in my life who will be my front seat passenger.
+I want to share and listen to my playlist with you only.
+Here's to more late-night laughs, tighter hugs, and dreams we’ll chase together.
+I cannot wait to see what the future holds for us. I know it will be amazing because we are in it together.
+</p>
+<p>
+    I could write a book about how much I love you, but I know you would never read it. So, I will just say this: Only you in this lifetime and in this universe.
+You are literally my ache karmo and sabhar ka phal❤️💘🫠🫶🏻
+    </p>
+	<p>
+     
+Also I will get jealous of the people that get to see you in Thailand for 7 days.
+    </p>
+    <p>
+     
+I can just keep going but that's not the point of this site. I just want to say that you are the best thing that ever happened to me.
+    </p>
+    <p>Love, Sambhav ❤️</p>
+  </section>
+
+  <section class="timeline">
+    <h2>📸 Our Memories 📸</h2>
+    <div class="memory">
+      <strong>17-Dec-24:</strong> Karan Aujla Event ❤️ The Best Day Ever because it's the day we met and the day I cannot forget. God literally blessed me with the best person ever 😘🎤
+    </div>
+    <div class="memory">
+      <strong>25-Dec-24:</strong> Big Chill Cafe Khan Market ❤️ 🎁 Our First Date and the day I realised it's you or no one ❤️
+    </div>
+    <div class="memory">
+      <strong>29-Dec-24:</strong> Casual Meet After Cafe De Flora ❤️ ✨ You made me feel so special that day I hope you remember 👩🏻‍❤️‍💋‍👨🏼
+    </div>
+<div class="memory">
+      <strong>10-Jan-25:</strong>  Ambience mall, Movie, Bougie 👩🏻‍❤️‍💋‍👨🏼 ✨ I enjoyed a lot that day because I spent the most time with you that day ❤️
+    </div>
+<div class="memory">
+      <strong>30-Apr-25:</strong> Cafeteria & Co, Ambience mall, Amex office 👩🏻‍❤️‍💋‍👨🏼 🎂 🎁 ✨ I tried my best to make you feel special bought you somethings I never in my life thought would bring somethings like these for someone. But you are really special ❤️
+    </div>
+    <div class="memory">
+      <strong>20-May-25:</strong> It's your Birthday TODAY 🥳 💝 😘 Made something so out of the world I never even imagined in my life but here we are the site you are looking at right now. I mean just WOW ❤️
+    </div>
+     <div class="memory">
+      <strong>💝 HOPE TO CREATE MANY MORE UNFORGETTABLE MEMORIES "ONLY" WITH YOU IN THIS LIFE 💝</strong>
+    </div>
+  </section>
+
+ <section class="gallery">
+  <h2>📷 Photo Gallery 📷</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+    <!-- 2 images -->
+    <img src="IMG_8079.jpeg" alt="Memory 1"style="max-width: 300px;">
+    <img src="19CA5E03-2E17-4A1E-81B5-DCFDDBE455F9.png" alt="Memory 2"style="max-width: 300px;">
+
+    <!-- 1 image centered -->
+    <div style="flex-basis: 100%; text-align: center;">
+      <img src="IMG_8158.jpeg" alt="Memory 3" style="max-width: 250px;">
+    </div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+    <!-- 2 images -->
+    <img src="5F9159B1-C941-4ABC-A015-7CD307B55979.jpeg" alt="Memory 4"style="max-width: 350px;">
+    <img src="4F894C91-38C5-4E25-AD11-A83450EB7027.png" alt="Memory 5"style="max-width: 350px;">
+
+<div style="flex-basis: 100%; text-align: center;">
+      <img src="FEC4A8E3-0418-4F30-BC7A-73FA27F24A29.jpeg" alt="Memory 6" style="max-width: 250px;">
+    </div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+    <!-- 2 more images -->
+    <img src="IMG_8318.jpeg" alt="Memory 7"style="max-width: 300px;">
+    <img src="30D9E18C-AEC1-4A17-B3AC-829D9952061B.png" alt="Memory 8"style="max-width: 300px;">
+  </div>
+  <div style="flex-basis: 100%; text-align: center;">
+      <img src="IMG_9342.jpeg" alt="Memory 9"style="max-width: 300px;">
+    </div>
+</section>
+
+<section class="reasons-love">
+    <h2>❤️ Reasons Why I Love You 😘</h2>
+    <ul>
+      <li>Your laughter lights up my darkest days.</li>
+      <li>You listen with your heart, not just your ears.</li>
+      <li>Every little thing you do feels magical.</li>
+      <li>You believe in me when I don’t believe in myself.</li>
+      <li>Your hugs must be the safest place in the world(must be because I never experienced that).</li>
+      <li>You make even ordinary moments extraordinary.</li>
+    </ul>
+	
+	<h2>❤️ Things I Love About You 😘</h2>
+    <ul>
+      <li>Your Eyes.</li>
+	  <li>Your Voice.</li>
+	  <li>Your Hairs.</li>
+      <li>Your Nose.</li>
+	  <li>Your Neck.</li>
+      <li>Holding Your Hand.</li>
+      <li>Your Lips.</li>
+      <li>Your Smile.</li>
+      <li>Basically Everything About You(My Potato Sac).</li>
+    </ul>
+  </section>
+
+
+<section class="favorite-video">
+  <h2>🎥 Our Favourite Video 🎥</h2>
+  <div style="text-align: center; margin-top: 1rem;">
+    <video controls style="max-width: 90%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+      <source src="our_favorite_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+  <section class="wish-wall">
+  <h2>💌 Special Message 💌</h2>
+  <div class="wish animated-message">
+  <span class="typing-text">Neha, you are my forever favorite hello and hardest goodbye 😘</span>
+</div>
+  <style>
+    .animated-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: #d94888;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #d94888;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.typing-text {
+  display: inline-block;
+  animation: handwriting 5s steps(60, end) infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+}
+    @keyframes handwriting {
+  0% { width: 0; }
+  90% { width: 100%; }
+  100% { width: 100%; }
+}
+      to { width: 100%; }
+    }
+  
+    .time-counter {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      max-width: 600px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+
+    .favorite-video {
+      text-align: center;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      max-width: 800px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+
+</style>
+</section>
+
+  
+
+  <section class="reasons-love">
+    <h2>💖 Your Favourite Things 💖</h2>
+    <ul>
+      <li><strong>Favourite Place to Eat:</strong> Cafeteria & Co.</li>
+      <li><strong>Favourite Type of Date:</strong> Netflix and Chill and Order In</li>
+      <li><strong>Favourite Country:</strong> Switzerland</li>
+      <li><strong>Favourite Song:</strong> Ishqbazian</li>
+      <li><strong>Favourite Pasta:</strong> Spaghetti</li>
+      <li><strong>Favourite Thing when Angry:</strong> Go Silent</li>
+      <li><strong>Favourite Movie Genre:</strong> Horror</li>
+      <li><strong>Favourite Naughty Thing:</strong> Biting</li>
+      <li><strong>Favourite Holy Place:</strong> Khatu Shyaam (Maybe but it’s in wishlist)</li>
+      <li><strong>Favourite God:</strong> Sai Baba and Mahadev</li>
+      <li><strong>Favourite Artist:</strong> Karan Aujla</li>
+      <li><strong>Favourite Food:</strong> Chicken Biryani</li>
+      <li><strong>Favourite Animal:</strong> Billu</li>
+      <li><strong>Favourite Person:</strong> Obviously Me (Hope it’s me 🤞🏻)</li>
+      <li><strong>Favourite Series:</strong> From</li>
+      <li><strong>Favourite Colour:</strong> None 😢</li>
+      <li><strong>Favourite Bottoms:</strong> Christian Louboutin</li>
+      <li><strong>Favourite Makeup Brand:</strong> Suroskie</li>
+      <li><strong>Favourite Style:</strong> Korean</li>
+      <li><strong>Favourite Drink:</strong> Tea</li>
+      <li><strong>Favourite Used to be Hobby:</strong> Art & Craft</li>
+      <li><strong>Favourite Compliment by Me:</strong> You like a poetry in motion 🥰
+
+</li>
+      <li><strong>I remember all of these by my heart, hope I got them all right.❤️</strong></li>
+    </ul>
+  </section>
+
+  <div class="footer">
+  🎁 Check your surprise 💝: <a href="https://url41.myntra.com/ls/click?upn=u001.VlPJl7fIwBoRhea0qO2I-2Bl69rEmR4ODAw-2BNdhV8zkIFIju0OQ5Ty8IVoKcHNQmXiiwvDGFoeGlGJjmaw9cuhR3dIZLvfkzPVe3HeiGxpZvekfUs0Sfnju5Vf8By9898k6Hxk_Cb1bj56Ooor0tOr0TmAdFbOkhNw0OHwsxijTuMSq-2FVlEIUYxtRncQQiqnAhIcFHItPZV-2FP235pD4yx45af9UVzxiyIBA6KsO2ZoH17J2Y0dbA9SE6E1RmCMGs8vps-2FJ-2Bmos7NPzsXPdAWhnjm0Ky783SG-2Fpa6eY0NiBmnHSCGRRcfAQmh-2BOPpKPwe5ajju2PvgAq8s4vGBs4X1eh1ehLN3hdbFgnaUeyhqVRdeyAELDoZisdsQe2dlqt6VBycal2UqbRvhNp6jhagyWsE9B5ajHwWuxTGpoA4glJU1gQWk-2BmUPdRtVIcKp4TxXLuFS5lWrdbW7tV5PtVRrW9xeY8W19dAmMFupX1xwDoojq6Rz8PnOdNkQ1JOZFKQqdfBu4Z3iiamlb3-2FSH-2FCgASAn7JJaflXmUSjHRxxT0MScKxgb9Qp39ctHInnF5158rLJFA3pm0buyq9KgV3A9FP3u3Oag-3D-3D">Click here</a> <br>
+  <img src="giftcard.jpeg" alt="Gift Card" style="max-width: 300px; margin-top: 1rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+  <br>
+  Made with Lots of ❤️ by Sambhav (Your Batman) <img src="batman.png" alt="Batman Icon" style="width: 24px; vertical-align: middle; margin-left: 6px;">
+</div>
+
+
+<script>
+  function toggleAudio(id) {
+    const thisAudio = document.getElementById(id);
+    const otherAudio = id === 'bdayAudio' ? document.getElementById('favAudio') : document.getElementById('bdayAudio');
+    const video = document.querySelector("video");
+
+    if (!thisAudio || !otherAudio) return;
+
+    if (thisAudio.paused) {
+      thisAudio.play();
+      otherAudio.pause();
+      if (video) video.pause(); // Pause video when audio plays
+    } else {
+      thisAudio.pause();
+    }
+  }
+
+  function blowOut(candle) {
+    const flame = candle.querySelector('.flame');
+    if (flame) {
+      flame.classList.add('fade-out');
+    }
+  }
+
+  document.getElementById('bdayAudio').addEventListener('play', function () {
+    document.getElementById('favAudio').pause();
+    const video = document.querySelector("video");
+    if (video) video.pause(); // Pause video when birthday song plays
+  });
+
+  document.getElementById('favAudio').addEventListener('play', function () {
+    document.getElementById('bdayAudio').pause();
+    const video = document.querySelector("video");
+    if (video) video.pause(); // Pause video when favorite song plays
+  });
+
+  const video = document.querySelector("video");
+  const bdayAudio = document.getElementById("bdayAudio");
+  const favAudio = document.getElementById("favAudio");
+
+  if (video) {
+    video.addEventListener('play', () => {
+      bdayAudio.pause();
+      favAudio.pause();
+    });
+  }
+
+  function updateTimeSince() {
+    const startDate = new Date("2024-12-17T00:00:00Z");
+    const now = new Date();
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    const output = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    document.getElementById("timeSince").textContent = output;
+  }
+
+  setInterval(updateTimeSince, 1000);
+  updateTimeSince();
+  function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  setVh();
+  window.addEventListener('resize', setVh);
+
+  if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+<script>
+const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+if (isIOS && !isStandalone) {
+  alert("📱 To install:\nSafari → Share → Add to Home Screen ❤️");
+}
+</script>
+
+</body>
+</html>
