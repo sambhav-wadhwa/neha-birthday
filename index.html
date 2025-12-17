@@ -282,7 +282,9 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-
+.audio-bar button.playing {
+  background-color: #f06292;
+}
 
 </style>
 </head>
@@ -628,7 +630,15 @@ I can just keep going but that's not the point of this site. I just want to say 
     const video = document.querySelector("video");
     if (video) video.pause(); // Pause video when favorite song plays
   });
+document.getElementById('bdayAudio').addEventListener('pause', () => {
+  document.getElementById('bdayBtn').textContent =
+    '🎵 Play Birthday Song ▶️';
+});
 
+document.getElementById('favAudio').addEventListener('pause', () => {
+  document.getElementById('favBtn').textContent =
+    '🎵 Play Your Favourite Song ▶️';
+});
   const video = document.querySelector("video");
   const bdayAudio = document.getElementById("bdayAudio");
   const favAudio = document.getElementById("favAudio");
